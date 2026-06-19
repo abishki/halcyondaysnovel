@@ -63,7 +63,8 @@ img{max-width:100%;display:block;}
 
 /* reading masthead */
 .read-head{position:relative;overflow:hidden;text-align:center;padding:5.5rem 28px 3.6rem;background:linear-gradient(180deg,#0a1626 0%,#0B1626 52%,var(--night) 100%);border-bottom:1px solid var(--line);}
-.read-clouds{position:absolute;left:0;right:0;bottom:0;height:62%;background:var(--clouds) bottom center/cover no-repeat;-webkit-mask-image:linear-gradient(to top,#000 28%,transparent 96%);mask-image:linear-gradient(to top,#000 28%,transparent 96%);opacity:.42;pointer-events:none;}
+.read-clouds-wrap{position:absolute;left:0;right:0;bottom:0;height:80%;pointer-events:none;will-change:transform;}
+.read-clouds{position:absolute;inset:0;background:var(--clouds) center bottom/cover no-repeat;-webkit-mask-image:linear-gradient(to top,#000 30%,rgba(0,0,0,.82) 58%,transparent 100%);mask-image:linear-gradient(to top,#000 30%,rgba(0,0,0,.82) 58%,transparent 100%);opacity:.55;}
 .read-head-inner{position:relative;z-index:2;max-width:720px;margin:0 auto;}
 .read-eyebrow{font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);margin-bottom:1.1rem;}
 .read-book{font-family:var(--display);font-weight:500;font-size:clamp(2.4rem,6.4vw,3.7rem);line-height:1.04;letter-spacing:.005em;text-shadow:0 2px 24px rgba(4,9,18,.7);}
@@ -108,6 +109,16 @@ img{max-width:100%;display:block;}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
 :focus-visible{outline:2px solid var(--brass-bright);outline-offset:3px;border-radius:2px;}
+
+/* atmospheric: gutter starfield (loads in on page load) */
+.starfield{position:fixed;top:0;bottom:0;width:calc((100vw - 41rem) / 2);pointer-events:none;z-index:1;opacity:0;animation:star-in 1.4s ease .1s forwards;}
+.starfield.left{left:0;}
+.starfield.right{right:0;}
+@keyframes star-in{to{opacity:1;}}
+.star{position:absolute;border-radius:50%;background:var(--brass-bright);box-shadow:0 0 5px 1px rgba(230,198,138,.4);animation:twinkle var(--tw-dur,5s) ease-in-out var(--tw-delay,0s) infinite;}
+@keyframes twinkle{0%,100%{opacity:.18;}50%{opacity:.95;}}
+@media(max-width:1000px){.starfield{display:none;}}
+@media(prefers-reduced-motion:reduce){.starfield{animation:none;opacity:1;}.star{animation:none;opacity:.55;}}
 </style>
 </head>
 <body>
@@ -124,7 +135,7 @@ img{max-width:100%;display:block;}
 </nav>
 
 <header class="read-head">
-  <div class="read-clouds"></div>
+  <div class="read-clouds-wrap" aria-hidden="true"><div class="read-clouds"></div></div>
   <div class="read-head-inner">
     <p class="read-eyebrow">Halcyon Days &middot; Book One</p>
     <h1 class="read-book">The Colossus</h1>
@@ -243,5 +254,42 @@ img{max-width:100%;display:block;}
     <p class="footer-fine">A.C. Bishkey. Published by CALM Studios, Ltd. &middot; Northbrook, Illinois. &copy; 2026 CALM Studios, Ltd. All rights reserved.</p>
   </div>
 </footer>
+<div class="starfield left" aria-hidden="true"></div>
+<div class="starfield right" aria-hidden="true"></div>
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var wrap = document.querySelector('.read-clouds-wrap');
+  var fields = [document.querySelector('.starfield.left'), document.querySelector('.starfield.right')];
+  fields.forEach(function(f){
+    if(!f) return;
+    var w = f.offsetWidth, h = f.offsetHeight;
+    if(w < 40) return;
+    var count = Math.max(18, Math.min(64, Math.round((w*h)/8500)));
+    var frag = document.createDocumentFragment();
+    for(var i=0;i<count;i++){
+      var s = document.createElement('span');
+      s.className = 'star';
+      s.style.left = (Math.random()*100).toFixed(2) + '%';
+      s.style.top = (Math.random()*100).toFixed(2) + '%';
+      var sz = (Math.random()*1.8 + 1).toFixed(2);
+      s.style.width = sz + 'px'; s.style.height = sz + 'px';
+      s.style.setProperty('--tw-dur', (Math.random()*4 + 4).toFixed(2) + 's');
+      s.style.setProperty('--tw-delay', (Math.random()*8).toFixed(2) + 's');
+      frag.appendChild(s);
+    }
+    f.appendChild(frag);
+  });
+  if(reduce || !wrap) return;
+  var ticking = false;
+  function update(){
+    var y = window.pageYOffset || 0;
+    wrap.style.transform = 'translate3d(0,' + (y*0.4).toFixed(1) + 'px,0)';
+    ticking = false;
+  }
+  window.addEventListener('scroll', function(){ if(!ticking){ ticking = true; requestAnimationFrame(update); } }, {passive:true});
+  update();
+})();
+</script>
 </body>
 </html>
