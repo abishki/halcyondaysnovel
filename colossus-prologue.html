@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TZ3VC3F5EG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TZ3VC3F5EG');
+</script>
+<title>The Colossus: Prologue | Halcyon Days by A.C. Bishkey</title>
+<meta name="description" content="The opening of The Colossus, Book One of the Halcyon Days saga by A.C. Bishkey. One hour after the Azure Colossus rose, Prince Lucan holds the skydeck above the ruins of White Hill.">
+<link rel="canonical" href="https://halcyondaysnovel.com/colossus-prologue.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Halcyon Days">
+<meta property="og:title" content="The Colossus: Prologue">
+<meta property="og:description" content="One hour after the Azure Colossus rose, Prince Lucan holds the skydeck above the ruins of White Hill. The opening of Book One of Halcyon Days.">
+<meta property="og:url" content="https://halcyondaysnovel.com/colossus-prologue.html">
+<meta property="og:image" content="https://halcyondaysnovel.com/hd-og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Colossus: Prologue">
+<meta name="twitter:description" content="The opening of Book One of the Halcyon Days saga by A.C. Bishkey.">
+<meta name="twitter:image" content="https://halcyondaysnovel.com/hd-og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+ --night:#070F1C; --sky:#0C1828; --sky-2:#15273C;
+ --brass:#C8A063; --brass-bright:#E6C68A;
+ --parchment:#ECE4D6; --muted:#94A3B6;
+ --blue:#7FB2CE; --red:#CC5A50;
+ --line:rgba(200,160,99,.22);
+ --display:'Bodoni Moda',serif; --body:'Spectral',serif;
+ --clouds:url('clouds.webp');
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--night);color:var(--parchment);font-family:var(--body);font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;padding:.9rem 28px;background:rgba(7,15,28,.8);backdrop-filter:blur(10px);border-bottom:1px solid rgba(200,160,99,.12);}
+.wordmark{font-family:var(--display);font-weight:600;font-size:1.04rem;letter-spacing:.22em;color:var(--parchment);text-transform:uppercase;}
+.nav-links{display:flex;gap:1.6rem;font-size:.82rem;letter-spacing:.05em;color:var(--muted);}
+.nav-links a{transition:color .18s;}
+.nav-links a:hover{color:var(--brass-bright);}
+.nav-links a[aria-current="page"]{color:var(--brass-bright);}
+.nav-toggle{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none;}
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:30px;height:30px;cursor:pointer;}
+.hamburger span{display:block;width:24px;height:2px;background:var(--parchment);border-radius:1px;transition:.25s;}
+
+/* buttons */
+.btn{font-family:var(--body);font-size:.92rem;font-weight:500;letter-spacing:.03em;padding:.85rem 1.6rem;border-radius:3px;border:1px solid var(--brass);transition:all .2s ease;cursor:pointer;display:inline-block;text-align:center;}
+.btn-primary{background:var(--brass);color:#0a1422;}
+.btn-primary:hover{background:var(--brass-bright);border-color:var(--brass-bright);}
+.btn-ghost{background:rgba(7,15,28,.35);color:var(--brass-bright);border-color:var(--line);}
+.btn-ghost:hover{border-color:var(--brass);background:rgba(200,160,99,.1);}
+
+/* reading masthead */
+.read-head{position:relative;overflow:hidden;text-align:center;padding:5.5rem 28px 3.6rem;background:linear-gradient(180deg,#0a1626 0%,#0B1626 52%,var(--night) 100%);border-bottom:1px solid var(--line);}
+.read-clouds{position:absolute;left:0;right:0;bottom:0;height:62%;background:var(--clouds) bottom center/cover no-repeat;-webkit-mask-image:linear-gradient(to top,#000 28%,transparent 96%);mask-image:linear-gradient(to top,#000 28%,transparent 96%);opacity:.42;pointer-events:none;}
+.read-head-inner{position:relative;z-index:2;max-width:720px;margin:0 auto;}
+.read-eyebrow{font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);margin-bottom:1.1rem;}
+.read-book{font-family:var(--display);font-weight:500;font-size:clamp(2.4rem,6.4vw,3.7rem);line-height:1.04;letter-spacing:.005em;text-shadow:0 2px 24px rgba(4,9,18,.7);}
+.read-chapter{margin-top:1.35rem;font-size:.8rem;letter-spacing:.24em;text-transform:uppercase;color:var(--brass-bright);}
+.read-dateline{margin-top:.7rem;font-style:italic;color:var(--muted);font-size:1.02rem;}
+
+/* reading body */
+.prose{max-width:40rem;margin:0 auto;padding:3.6rem 28px 1.2rem;font-size:clamp(1.08rem,1.35vw,1.24rem);line-height:1.82;color:var(--parchment);}
+.prose p{margin:0 0 1.35em;}
+.prose p:last-child{margin-bottom:0;}
+.prose p:first-of-type::first-letter{float:left;font-family:var(--display);font-weight:600;color:var(--brass);font-size:3.3em;line-height:.76;padding:.05em .14em 0 0;}
+
+/* end cta */
+.read-end{max-width:40rem;margin:0 auto;padding:1.6rem 28px 5.5rem;text-align:center;}
+.read-end-rule{border:none;border-top:1px solid var(--line);width:64px;margin:0 auto 2.4rem;}
+.read-end h2{font-family:var(--display);font-weight:500;font-size:clamp(1.5rem,3vw,1.95rem);margin-bottom:.9rem;}
+.read-end .read-sub{color:var(--muted);font-size:.96rem;margin-bottom:2rem;}
+.read-cta-btns{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;}
+.read-back{display:inline-block;margin-top:2.4rem;font-size:.82rem;letter-spacing:.05em;color:var(--muted);transition:color .18s;}
+.read-back:hover{color:var(--brass-bright);}
+
+/* footer */
+.footer{border-top:1px solid var(--line);padding:3.5rem 0;background:#050B14;}
+.footer .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+.footer-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.4rem;align-items:center;}
+.footer .wordmark{font-size:.95rem;}
+.footer-links{display:flex;flex-wrap:wrap;gap:1.3rem;font-size:.8rem;color:var(--muted);}
+.footer-links a:hover{color:var(--brass-bright);}
+.footer-fine{margin-top:2rem;font-size:.76rem;color:var(--muted);opacity:.8;}
+
+@media(max-width:760px){
+ .hamburger{display:flex;}
+ .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:1.1rem;font-size:.98rem;background:rgba(7,15,28,.97);border-bottom:1px solid var(--line);padding:1.2rem 18px 1.5rem;}
+ .nav-toggle:checked ~ .nav-links{display:flex;}
+ .nav-toggle:checked ~ .hamburger span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+ .nav-toggle:checked ~ .hamburger span:nth-child(2){opacity:0;}
+ .nav-toggle:checked ~ .hamburger span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+ .nav{padding:.8rem 16px;}
+ .wordmark{font-size:.92rem;letter-spacing:.16em;}
+ .read-head{padding:4.2rem 20px 3rem;}
+ .prose{padding-top:2.8rem;}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+:focus-visible{outline:2px solid var(--brass-bright);outline-offset:3px;border-radius:2px;}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="./" class="wordmark">Halcyon Days</a>
+  <input type="checkbox" id="navtoggle" class="nav-toggle" aria-label="Toggle menu">
+  <label for="navtoggle" class="hamburger" aria-hidden="true"><span></span><span></span><span></span></label>
+  <div class="nav-links">
+    <a href="./colossus-prologue.html" aria-current="page">Book 1: The Colossus</a>
+    <a href="./city-in-the-sands-prologue.html">Book 2: The City in the Sands</a>
+    <a href="./about.html">About</a>
+    <a href="./contact.html">Contact</a>
+  </div>
+</nav>
+
+<header class="read-head">
+  <div class="read-clouds"></div>
+  <div class="read-head-inner">
+    <p class="read-eyebrow">Halcyon Days &middot; Book One</p>
+    <h1 class="read-book">The Colossus</h1>
+    <p class="read-chapter">Prologue: Lucan</p>
+    <p class="read-dateline">One Hour After the Rise of the Azure Colossus – White Hill, Iveria</p>
+  </div>
+</header>
+
+<article class="prose">
+  <p>The world was being reborn in judgment and rain, and Lucan was once again dealing with heretics.</p>
+  <p>A dramatic thought, he knew, but a prince was permitted his indulgences. Besides, when the scholars wrote of this day, and by the Rose Crystal’s light they would, they’d need a line worth remembering. The day the Colossus rose, the day White Hill fell, and the day Prince Lucan stood upon the Inquisitor’s skydeck and watched as millions were tithed.</p>
+  <p>Yes, judgment and rain, that would do nicely.</p>
+  <p>Below, the Colossus stood fifteen hundred feet under the tumultuous sky. Its crystalline armor was slick with water, its blue flesh lit by a glow steadier than lightning. The Iverian skyships swarmed it like wasps, their shardshot cannons blazing against that impossible hide. Deck plates thrummed beneath the prince’s feet with each distant impact. Rivets sang under stress.</p>
+  <p>The city of White Hill was effectively gone. The ruptured shell lay scattered across the verdant plain. What remained would drown in dust and deluge by nightfall.</p>
+  <p>As planned, as decreed.</p>
+  <p>“We need to move above the storm, Prince.”</p>
+  <p>Rook’s voice cut through the downpour. The man stood at the railing, water streaming off that ridiculous chrome mask he insisted on wearing. He was staring into the squall as if he could read a message in the clouds.</p>
+  <p>“Retreat from victory?” Lucan let the words hang between them. He didn’t turn. “This moment is centuries in the making, Rook. Our conviction made manifest, and you want to flee?”</p>
+  <p>“There’s another ship above us.” Rook pointed at the gray mass overhead, his mask tilting to catch the glow of ricocheting cannon fire. “Frigate-class. I caught a glimpse when the clouds shifted. Five hundred feet higher.”</p>
+  <p>Five hundred feet in the clouds. Close enough to pounce. Far enough to think no one would look up.</p>
+  <p>Of course, there was. The Iverian League never could leave well enough alone. Always interfering, always protecting their wayward flock, and always standing between the faithful and being reclaimed by the Emperor’s rightful will.</p>
+  <p>“Scramble fighters.” He straightened a cuff before addressing one of his Rosari guards. “Engage and destroy.”</p>
+  <p>“Belay that.”</p>
+  <p>Lucan’s fingers found the hilt of his suda, the liquid-metal sidearm that obeyed the wielder’s intent. “Careful, Rook.”</p>
+  <p>“A frigate in those clouds, in this storm, with our fighters spread across the battle?” Rook shook his head. “They’d burn fuel chasing shadows and leave us exposed. That ship is coming to us whether we send fighters or not.” He tilted his mask toward the skydeck. “Let them come. You’ll want your blade for whoever steps off.”</p>
+  <p>It was a sound tactical read, and Lucan knew it. Rook had earned the right to speak plainly through years of service and camaraderie. The finest Rosari tactician Lucan had ever known. The man had never once steered him wrong. Lucan wasn’t sure if it was instinct or if the man possessed an innate knowledge of how the Iverian mind worked; either way, he’d proven it a dozen times over.</p>
+  <p>“Fine.” Lucan released the hilt. “But if you’re wrong, I’ll add your name next to Syd’s on the list of people who’ve disappointed me today.”</p>
+  <p>“Noted, Prince.” There it was. The way Rook said it, like the title was both an honorific and a joke. It was the single liberty Lucan allowed any living soul, and simply because Rook had been sent by the Crystal. How else could Lucan explain that meeting in Rosewood?</p>
+  <p>They waited while the tempest raged. Rook stood at the railing with his arms crossed, watching the clouds like a man counting down to the inevitable.</p>
+  <p>Thunder cracked the sky in half. A transport vented its engines above them and dropped through the clouds, touching down hard on the rain-slicked skydeck near the port railing. Four figures dismounted, railing at their back, and three were armed. Lucan recognized the leader before he made his first step.</p>
+  <p>Rook glanced back at the prince.</p>
+  <p>“First Altier Toren Luinondo.” Lucan let the name roll off his tongue. “To what do I owe the honor?”</p>
+  <p>Toren walked forward through the rain as if weather observed rank. Altiers were always like that. So sure of their moral superiority. Lucan had heard rumors of this one, but based on what he saw, Toren was just another nonbeliever come to find faith at the edge of Lucan’s blade.</p>
+  <p>“You crossed the line, van Ferro.” Toren’s voice was level, controlled, but the rage beneath it was unmistakable. “And you don’t even see it, do you? Three million lived in White Hill. Three million. That thing… this… Colossus… it won’t stop with Iveria. It will consume the whole world.”</p>
+  <p>“You traveled all this way to warn me?” He spread his hands in mock surprise. “I expected threats, Toren. Posturing. Perhaps some violence. Not sermons. Not from your ilk.”</p>
+  <p>“You misunderstand.” The suda in Toren’s hand refined itself into a katana, thin and exact. Static crawled along the blade’s blue form. “This is the part where I stop you from burning the world for the sake of your damned ego.”</p>
+  <p>The grin came naturally. It was the one he saved for moments like this, the one that showed too many teeth. “Not for my ego, First Altier, but for my humble faith.” He glanced at his Rosari guards, who had begun their transformations. “And your mistake is thinking the world will burn. No, no, only the unworthy will blister.”</p>
+  <p>Toren’s two Altiers readied themselves. Lucan could see the blue lines glowing under their skin, crystal flakes flickering on their flesh. They were prepared for what was to come. His eyes moved past them to the fourth figure standing in the back. He was unarmed, unremarkable, and appeared to be a pilot.</p>
+  <p>Something about him offended Lucan. The man had the gall to land on his skydeck and stand there as if he had all the time in the world.</p>
+  <p>“Rook. Think you can handle the scrawny one?”</p>
+  <p>Rook took two steps as his transformation swept over him. His frame was engulfed in the crimson shroud. Crystalline fur covered his body, and boots arose to meet the form’s new joints. That chrome mask, oversized on his human face, now fit perfectly against the skull beneath.</p>
+  <p>The Rosari transformation.</p>
+  <p>“I’ll manage,” Rook said, and his voice was deeper now. He rolled his shoulders, settled into his stance, and fixed the pilot with a stare that would’ve sent most men running.</p>
+  <p>The pilot didn’t move.</p>
+  <p>No time to wonder. Violence was calling, and transforming into a Rosari was the final rite. It sang in Lucan’s blood, and he surrendered to it.</p>
+  <p>The shroud enveloped his body, adding weight and power to his frame. Clawed feet formed beneath him. He gripped his suda, and the liquid metal rose from the hilt to set as a single-edged blade.</p>
+  <p>Six Rosari against three Altiers and a pilot. History said Lucan was far outmatched. He liked those odds. More for the scholars to write about.</p>
+  <p>Not that he was truly worried. Even among Rosari, the prince was different. The air around him thickened, responding to his will. That was his personal gift. A mass field he could project with a thought. Step too close, and the world grew heavier. Every second near him added drag to limbs, blades, and breath.</p>
+  <p>He swung high, arcing the blade with his full weight. Toren sidestepped, and then he wasn’t there. The blade arrived first. Toren filled the space a heartbeat after. A wet line opened across Lucan’s collarbone. Static crawled along blue crystal scales that flickered out almost as fast as they’d formed.</p>
+  <p>Lucan launched another swing. Another miss. Each one was deliberate. He didn’t need to hit, but needed to stay close.</p>
+  <p>Toren circled right, blade extended, hunting a real opening. His katana sliced upward, elegant and precise. The prince caught it with his forearm and his chin, letting the blade bite into the crimson pelt. The pain was immediate, bright, and utterly meaningless.</p>
+  <p>“You’re as predictable as all the rest.” Lucan laughed.</p>
+  <p>His boots skidded, he shoved forward, and Toren stumbled backward. The prince pressed closer. A rivet head popped and pinged into the wash.</p>
+  <p>“You think protecting people is predictable?” Toren’s voice was strained now, fighting against the phantom pressure.</p>
+  <p>“Your compassion is cruelty.” Lucan advanced, step by heavy step, closing to within arm’s length. “You let the weak suffer because you’re too frightened to do what must be done. I’m told your father understood that, in the end. Isn’t it strange how true clarity comes when you’re bleeding out for what you believe in?” Toren’s eyes hardened, but he did not respond. “No? You’ll find out soon enough.”</p>
+  <p>Toren twisted free, impossibly, and kept his distance. Lucan could see crystal scales bloom and dissolve across his body. A calculated burst. Clever, but an overexertion. Toren was a step past him, deck wash erupting where his feet had been a heartbeat before. His blade sliced across the prince’s side. The cut was deeper this time, and a darker wetness spread against his pelt. Hot metal and ozone cut through the damp air.</p>
+  <p>Lucan roared, not in pain, but in joy. In the pure fundamental thrill of life and death.</p>
+  <p>He pressed forward, and Toren retreated toward the starboard rail where his two Altiers were engaged with the Rosari guards. Toren’s movements slowed as Lucan drew closer. A wide, vertical swing, then a horizontal arc forced Toren to his left. The movement was calculated and precise. Lucan was herding him back against the nearest Altier. Toren appeared to be aware of the field and was doing his best to avoid it. They were near the railing now, away from where Rook fought the pilot by the transport. Toren and his companion fought back-to-back, protecting each other.</p>
+  <p>Compassion. Exactly as planned.</p>
+  <p>Another swing. Toren moved instinctively to shield the other fighter. To protect the weaker one.</p>
+  <p>A feint. The prince pivoted low, then high. His blade drove deep into the companion’s back, through cloth and flesh and bone. The man fell with a sound that was almost a sigh. The deck replied with a hollow thud.</p>
+  <p>Toren froze and his face shifted: pain, guilt, rage, and grief. All of it at once. The sight amused the prince.</p>
+  <p>“You see?” he hissed through his fangs. “Trying to save the weak only gets them killed.”</p>
+  <p>The Colossus bellowed somewhere below them, a sound like continents smashing together, and the deck shuddered under their feet. Even here, far above the creature, its presence pressed against the world.</p>
+  <p>Before he could strike again, drive his blade through Toren’s heart and end this, another cry echoed across the deck.</p>
+  <p>This one was human and bright as a struck bell. Rook’s voice.</p>
+  <p>Lucan turned.</p>
+  <p>Across the skydeck, near the port railing, the pilot stood utterly still. His hands rested flat against a leather pack on the small of his back. Steam rose from it, visible even in the downpour. Whatever the pilot had done, it had buckled Rook’s transformation. The crystalline fur sloughed like frost in sunlight. His human form was sliding across the slick surface toward the open sky.</p>
+  <p>Rook’s chrome mask caught the glow of the ship’s crossfire as he tumbled over the railing. The mirror sheen on that snarling mask hung for a moment, and then it vanished. It was swallowed by wind, cloudburst, and the fall.</p>
+  <p>Rook was gone with it.</p>
+  <p>Lucan’s blade stopped mid-swing. He took a step toward the side, then another. His thumb ground against the suda’s hilt. He felt a screw pop and had to restrain himself before he damaged his weapon further.</p>
+  <p>The sole person who’d stood at his side through the planning, the setbacks, and the long nights when faith was almost madness. Who believed in the vision. Who Lucan trusted.</p>
+  <p>Killed by an ordinary pilot.</p>
+  <p>Something inside him cracked that wasn’t bone. He told himself it didn’t matter. Whatever it was, it wouldn’t help him kill Toren.</p>
+  <p>“After him!” Toren shouted before lifting the fallen companion with surprising care. The pilot vaulted into the transport and kicked it over the edge. Toren followed over the railing with the body. The surviving Altier broke free and jumped after them.</p>
+  <p>Lucan charged forward, claws scraping against the wet deck, but they had vanished, hidden by the twilight and tempest.</p>
+  <p>He slammed his fist into the railing. The metal collapsed beneath the blow.</p>
+  <p>A beat passed as he stared into the deluge, then at their works. The Colossus still fought, which meant the day was not lost. One of his guards reverted and approached cautiously.</p>
+  <p>“Your orders, Prince?”</p>
+  <p>He turned slowly, meeting her eyes. She was young. Probably joined the guard thinking it was an honor, not a sacrifice. She would learn.</p>
+  <p>“Pursue them. Retrieve Rook’s body from wherever it fell. Bring it back to me.”</p>
+  <p>Her face went pale. She understood what that meant. Not the fall. A Rosari could survive a terminal impact. No, she saw the scene below, the Colossus raging, and the chaos of war spreading across the countryside. Rook’s corpse was lost to the carnage. That was if the pilot hadn’t reached it before it hit the ground. This was an impossible task on an active battlefield. Lucan did not care. His need for violence had not been satisfied.</p>
+  <p>She saluted, because that was what the faithful did, and vaulted into the growing darkness of the night sky.</p>
+  <p>“The rest of you,” he said to the remaining guards. “Go with her. Follow them into the afterlife, if you must.”</p>
+  <p>Without hesitation, they leapt over the railing one by one, dropping into the turmoil.</p>
+  <p>Lucan stood alone on the deck. It was not meant to go this way. The Colossus had risen. White Hill was destroyed. The beginning of his new world, his new order, his devotion made manifest in crystal and blue flesh. Yet Toren had escaped, Rook was dead, and a day that should have been triumph sat bitter in his mouth.</p>
+  <p>No. That wasn’t how it would be written. He would tell the scholars a different story. He would tell them Rook sacrificed himself to the cause. Together, they had pushed back the Iverian heretics and secured a great victory for the faithful. That version was cleaner. Simpler. True in the ways that mattered.</p>
+  <p>After all, this was not a defeat. The divine could only ever be delayed, never denied. The storm had washed away any doubt of that.</p>
+</article>
+
+<section class="read-end">
+  <hr class="read-end-rule">
+  <h2>Keep reading.</h2>
+  <p class="read-sub">The Colossus is available in ebook, paperback, and hardcover.</p>
+  <div class="read-cta-btns">
+    <a class="btn btn-primary" href="https://www.amazon.com/Halcyon-Days-Colossus-C-Bishkey-ebook/dp/B0FQBV9FVD">Buy The Colossus</a>
+    <a class="btn btn-ghost" href="https://acbishkey.substack.com/">Join the Crew on Substack</a>
+  </div>
+  <a class="read-back" href="./">&larr; Back to Halcyon Days</a>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <span class="wordmark">Halcyon Days</span>
+      <div class="footer-links">
+        <a href="./colossus-prologue.html">The Colossus</a>
+        <a href="./city-in-the-sands-prologue.html">The City in the Sands</a>
+        <a href="./about.html">About</a>
+        <a href="./contact.html">Contact</a>
+        <a href="https://calmstudiosltd.com/">CALM Studios</a>
+        <a href="./privacy.html">Privacy</a>
+        <a href="./terms.html">Terms</a>
+      </div>
+    </div>
+    <p class="footer-fine">A.C. Bishkey. Published by CALM Studios, Ltd. &middot; Northbrook, Illinois. &copy; 2026 CALM Studios, Ltd. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>
