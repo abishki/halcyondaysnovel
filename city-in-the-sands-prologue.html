@@ -373,6 +373,9 @@ body:has(.gate[open]) .prologue-subhead, body.prologue-open .prologue-subhead{ma
     var y = window.pageYOffset || 0;
     var t = shrink > 0 ? Math.min(1, y / shrink) : 1;
     fog.style.height = (100 - t * (100 - MINV)).toFixed(2) + 'vh';
+    var s1 = (55 - t*23).toFixed(1), mp = (77.5 - t*1.5).toFixed(1), mo = (0.5 - t*0.32).toFixed(3);
+    var mask = 'linear-gradient(to top,#000 0%,#000 '+s1+'%,rgba(0,0,0,'+mo+') '+mp+'%,transparent 100%)';
+    fog.style.webkitMaskImage = mask; fog.style.maskImage = mask;
     var docH = document.documentElement.scrollHeight;
     var remaining = docH - (y + vh), fadeDist = 320;
     fog.style.opacity = (remaining >= fadeDist ? 1 : Math.max(0, remaining / fadeDist)).toFixed(3);
