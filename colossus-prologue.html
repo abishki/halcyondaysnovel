@@ -63,9 +63,10 @@ img{max-width:100%;display:block;}
 
 /* reading masthead */
 .read-head{position:relative;overflow:hidden;text-align:center;padding:5.5rem 28px 3.6rem;background:linear-gradient(180deg,#0a1626 0%,#0B1626 52%,var(--night) 100%);border-bottom:1px solid var(--line);}
-.read-clouds-wrap{position:absolute;left:0;right:0;bottom:0;height:80%;pointer-events:none;will-change:transform;}
-.read-clouds{position:absolute;inset:0;background:var(--clouds) center bottom/cover no-repeat;-webkit-mask-image:linear-gradient(to top,#000 30%,rgba(0,0,0,.82) 58%,transparent 100%);mask-image:linear-gradient(to top,#000 30%,rgba(0,0,0,.82) 58%,transparent 100%);opacity:.55;}
-.read-head-inner{position:relative;z-index:2;max-width:720px;margin:0 auto;}
+.read-head-inner{position:relative;z-index:7;max-width:720px;margin:0 auto;}
+.fog{position:fixed;left:0;right:0;bottom:0;height:12vh;background:var(--clouds) center bottom/cover no-repeat;-webkit-mask-image:linear-gradient(to top,#000 0%,#000 55%,transparent 100%);mask-image:linear-gradient(to top,#000 0%,#000 55%,transparent 100%);opacity:1;z-index:5;pointer-events:none;}
+html.motion .fog{height:100vh;}
+html.reduce .fog{height:10vh;opacity:.7;}
 .read-eyebrow{font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);margin-bottom:1.1rem;}
 .read-book{font-family:var(--display);font-weight:500;font-size:clamp(2.4rem,6.4vw,3.7rem);line-height:1.04;letter-spacing:.005em;text-shadow:0 2px 24px rgba(4,9,18,.7);}
 .read-chapter{margin-top:1.35rem;font-size:.8rem;letter-spacing:.24em;text-transform:uppercase;color:var(--brass-bright);}
@@ -111,7 +112,7 @@ img{max-width:100%;display:block;}
 :focus-visible{outline:2px solid var(--brass-bright);outline-offset:3px;border-radius:2px;}
 
 /* atmospheric: gutter starfield (loads in on page load) */
-.starfield{position:fixed;top:0;bottom:0;width:calc((100vw - 41rem) / 2);pointer-events:none;z-index:1;opacity:0;animation:star-in 1.4s ease .1s forwards;}
+.starfield{position:fixed;top:0;bottom:0;width:calc((100vw - 41rem) / 2);pointer-events:none;z-index:6;opacity:0;animation:star-in 1.4s ease .1s forwards;}
 .starfield.left{left:0;}
 .starfield.right{right:0;}
 @keyframes star-in{to{opacity:1;}}
@@ -120,8 +121,10 @@ img{max-width:100%;display:block;}
 @media(max-width:1000px){.starfield{display:none;}}
 @media(prefers-reduced-motion:reduce){.starfield{animation:none;opacity:1;}.star{animation:none;opacity:.55;}}
 </style>
+<script>document.documentElement.className += (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) ? ' reduce' : ' motion';</script>
 </head>
 <body>
+<div class="fog" aria-hidden="true"></div>
 <nav class="nav">
   <a href="./" class="wordmark">Halcyon Days</a>
   <input type="checkbox" id="navtoggle" class="nav-toggle" aria-label="Toggle menu">
@@ -135,7 +138,6 @@ img{max-width:100%;display:block;}
 </nav>
 
 <header class="read-head">
-  <div class="read-clouds-wrap" aria-hidden="true"><div class="read-clouds"></div></div>
   <div class="read-head-inner">
     <p class="read-eyebrow">Halcyon Days &middot; Book One</p>
     <h1 class="read-book">The Colossus</h1>
@@ -259,7 +261,7 @@ img{max-width:100%;display:block;}
 <script>
 (function(){
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var wrap = document.querySelector('.read-clouds-wrap');
+  var fog = document.querySelector('.fog');
   var fields = [document.querySelector('.starfield.left'), document.querySelector('.starfield.right')];
   fields.forEach(function(f){
     if(!f) return;
@@ -280,14 +282,20 @@ img{max-width:100%;display:block;}
     }
     f.appendChild(frag);
   });
-  if(reduce || !wrap) return;
+  if(reduce || !fog) return;
+  var vh = window.innerHeight, shrink = vh * 0.7, MINV = 15;
   var ticking = false;
   function update(){
     var y = window.pageYOffset || 0;
-    wrap.style.transform = 'translate3d(0,' + (y*0.4).toFixed(1) + 'px,0)';
+    var t = shrink > 0 ? Math.min(1, y / shrink) : 1;
+    fog.style.height = (100 - t * (100 - MINV)).toFixed(2) + 'vh';
+    var docH = document.documentElement.scrollHeight;
+    var remaining = docH - (y + vh), fadeDist = vh * 0.9;
+    fog.style.opacity = (remaining >= fadeDist ? 1 : Math.max(0, remaining / fadeDist)).toFixed(3);
     ticking = false;
   }
   window.addEventListener('scroll', function(){ if(!ticking){ ticking = true; requestAnimationFrame(update); } }, {passive:true});
+  window.addEventListener('resize', function(){ vh = window.innerHeight; shrink = vh * 0.7; update(); }, {passive:true});
   update();
 })();
 </script>
