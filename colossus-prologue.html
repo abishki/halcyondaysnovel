@@ -124,6 +124,11 @@ html.reduce .fog{height:10vh;opacity:.7;}
 @keyframes twinkle{0%,100%{opacity:.18;}50%{opacity:.95;}}
 @media(max-width:1000px){.starfield{display:none;}}
 @media(prefers-reduced-motion:reduce){.starfield{animation:none;opacity:1;}.star{animation:none;opacity:.55;}}
+.announce{position:relative;z-index:10;background:linear-gradient(180deg,#0a1626,#050B14);border-bottom:1px solid var(--line);text-align:center;font-size:1.06rem;line-height:1.55;letter-spacing:.015em;color:var(--brass-bright);padding:1.15rem 1.3rem;}
+.announce strong{color:var(--parchment);font-weight:600;font-family:var(--display);}
+.announce a{color:#0a1422;background:var(--brass);font-weight:600;letter-spacing:.02em;padding:.4rem .95rem;border-radius:3px;margin-left:.4rem;display:inline-block;transition:background .2s;}
+.announce a:hover{background:var(--brass-bright);}
+@media(max-width:760px){.announce{font-size:.98rem;padding:1rem .9rem;}.announce a{margin-left:0;margin-top:.5rem;}}
 </style>
 <script>document.documentElement.className += (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) ? ' reduce' : ' motion';</script>
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -132,6 +137,7 @@ html.reduce .fog{height:10vh;opacity:.7;}
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 </head>
 <body>
+<div class="announce"><strong>Book 2: The City in the Sands</strong> ARC scheduled for August 25. <a href="./contact.html">Request a Free Advance Copy &rarr;</a></div>
 <div class="fog" aria-hidden="true"></div>
 <div class="grain" aria-hidden="true"></div>
 <nav class="nav">
