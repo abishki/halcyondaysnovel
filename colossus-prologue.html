@@ -70,6 +70,7 @@ img{max-width:100%;display:block;}
 .fog{position:fixed;left:0;right:0;bottom:0;height:12vh;background:var(--clouds) center bottom/cover no-repeat;-webkit-mask-image:linear-gradient(to top,#000 0%,#000 55%,transparent 100%);mask-image:linear-gradient(to top,#000 0%,#000 55%,transparent 100%);opacity:1;z-index:5;pointer-events:none;}
 html.motion .fog{height:100vh;}
 html.reduce .fog{height:10vh;opacity:.7;}
+.grain{position:fixed;left:0;right:0;bottom:0;height:50vh;z-index:6;pointer-events:none;opacity:.09;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='gn'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 1'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23gn)'/%3E%3C/svg%3E");background-size:150px 150px;-webkit-mask-image:linear-gradient(to top,#000 0%,#000 50%,transparent 100%);mask-image:linear-gradient(to top,#000 0%,#000 50%,transparent 100%);}
 .read-eyebrow{font-size:.82rem;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);margin-bottom:1.1rem;}
 .read-book{font-family:var(--display);font-weight:500;font-size:clamp(2.3rem,6vw,3.6rem);line-height:1.04;letter-spacing:.005em;text-shadow:0 1px 3px rgba(7,15,28,.92),0 0 22px rgba(7,15,28,.5);}
 .read-chapter{margin-top:1.35rem;font-size:.9rem;letter-spacing:.24em;text-transform:uppercase;color:var(--brass-bright);}
@@ -128,6 +129,7 @@ html.reduce .fog{height:10vh;opacity:.7;}
 </head>
 <body>
 <div class="fog" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
 <nav class="nav">
   <a href="./" class="wordmark">Halcyon Days</a>
   <input type="checkbox" id="navtoggle" class="nav-toggle" aria-label="Toggle menu">
@@ -288,12 +290,15 @@ html.reduce .fog{height:10vh;opacity:.7;}
     f.appendChild(frag);
   });
   if(reduce || !fog) return;
-  var vh = window.innerHeight, shrink = vh * 0.7, MINV = 15;
+  var vh = window.innerHeight, shrink = vh * 0.7, MINV = 25;
   var ticking = false;
   function update(){
     var y = window.pageYOffset || 0;
     var t = shrink > 0 ? Math.min(1, y / shrink) : 1;
     fog.style.height = (100 - t * (100 - MINV)).toFixed(2) + 'vh';
+    var s1 = (55 - t*23).toFixed(1), mp = (77.5 - t*1.5).toFixed(1), mo = (0.5 - t*0.32).toFixed(3);
+    var mask = 'linear-gradient(to top,#000 0%,#000 '+s1+'%,rgba(0,0,0,'+mo+') '+mp+'%,transparent 100%)';
+    fog.style.webkitMaskImage = mask; fog.style.maskImage = mask;
     var docH = document.documentElement.scrollHeight;
     var remaining = docH - (y + vh), fadeDist = vh * 0.9;
     fog.style.opacity = (remaining >= fadeDist ? 1 : Math.max(0, remaining / fadeDist)).toFixed(3);
