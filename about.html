@@ -87,8 +87,12 @@ img{max-width:100%;display:block;}
 .figure{margin-top:2.4rem;}
 .framed{display:block;width:100%;height:auto;border:1px solid rgba(255,255,255,.08);border-radius:6px;box-shadow:0 18px 52px rgba(0,0,0,.5);}
 .figcap{margin-top:.9rem;font-size:.8rem;color:var(--muted);letter-spacing:.02em;font-style:italic;}
-.author-grid{display:grid;grid-template-columns:300px 1fr;gap:2.8rem;align-items:start;}
-.author-grid .portrait{width:100%;border-radius:6px;border:1px solid rgba(255,255,255,.08);box-shadow:0 14px 40px rgba(0,0,0,.5);}
+.portrait-top{display:block;width:200px;border-radius:6px;border:1px solid rgba(255,255,255,.08);box-shadow:0 14px 40px rgba(0,0,0,.5);margin-bottom:1.8rem;}
+.letter{max-width:680px;}
+.letter p{color:var(--parchment);opacity:.9;font-size:1.06rem;line-height:1.72;margin-bottom:1.1rem;}
+.letter .letter-head{color:var(--brass-bright);font-style:italic;margin-top:1.8rem;}
+.letter .sign{font-family:var(--display);font-style:italic;color:var(--brass-bright);letter-spacing:.05em;margin-top:1.9rem;margin-bottom:.25rem;}
+.letter .sign-name{font-family:var(--display);font-size:1.2rem;color:var(--parchment);}
 .about-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.8rem;}
 .crew{display:grid;grid-template-columns:minmax(6.5rem,max-content) 1fr;gap:1.1rem 1.8rem;margin-top:2rem;}
 .crew dt{font-family:var(--display);font-weight:600;font-size:1.1rem;color:var(--brass-bright);line-height:1.5;}
@@ -113,8 +117,7 @@ img{max-width:100%;display:block;}
  .nav{padding:.8rem 16px;}
  .wordmark{font-size:.92rem;letter-spacing:.16em;}
  .page-head{padding:5rem 18px 4rem;}
- .author-grid{grid-template-columns:1fr;gap:1.8rem;}
- .author-grid .portrait{max-width:240px;}
+ .portrait-top{width:160px;margin-bottom:1.4rem;}
  .crew{display:block;}
  .crew dt{margin-top:1.2rem;}
  .crew dt:first-of-type{margin-top:0;}
@@ -204,13 +207,24 @@ img{max-width:100%;display:block;}
   <div class="inner">
     <p class="about-eyebrow">The Author</p>
     <h2>A.C. Bishkey</h2>
-    <div class="author-grid">
-      <img class="portrait" src="author-portrait.webp" alt="Portrait of author A.C. Bishkey" width="760" height="760" loading="lazy">
-      <div>
-        <p class="about-placeholder">[ About A.C. Bishkey &mdash; blurb to come. ]</p>
-        <div class="about-cta">
-          <a class="btn btn-primary" href="https://acbishkey.substack.com/">Substack: Join the Crew</a>
-        </div>
+    <img class="portrait-top" src="author-portrait.webp" alt="Portrait of author A.C. Bishkey" width="760" height="760" loading="lazy">
+    <div class="letter">
+      <p>Hiya!</p>
+      <p class="letter-head">To those who don't know me:</p>
+      <p>I try, desperately, to be a structured, deliberate writer who balances intricate worldbuilding with sharp, character-driven storytelling. I don't always stick the landing, but when I do, you'll know. I pride myself on my attention to detail when it works in my favor, and I hand-wave it away when it makes me look silly. I like reforging my prose while keeping the heart of the story intact. Every moment should have weight. Character choices should feel real. The world should have depth beyond what's on the page.</p>
+      <p>I strive for writing that is clean, confident, and immersive. Stories should have propulsion, but the train tracks should be laid before leaving the station. Characters should never do what's convenient just to move the plot forward. We should walk the path with them. I hold myself to the high standards that won me third place in the Barrington Library eighth-grade writing contest. This is a promise to you, dear reader.</p>
+      <p>I am littered with misspellings, grammar mistakes, and questionable syntax. I also love Oxford commas. I will waste time rewriting an About Me blurb twenty times, even though I know no one will read it. I know. I don't make sense to me either.</p>
+      <p>If that sounds like your jam, stick around.</p>
+      <p class="letter-head">To everyone I know and love:</p>
+      <p>Thank you for reading my story. This is wild. I've been writing my whole life. I got my start on the mean streets of AIM chats, and now it's all Outlook emails, so putting together a novel about Halcyon Days feels surreal. I don't even know where to start, except to say this book wouldn't exist without the people in my life.</p>
+      <p>My wife, my son, our dog, my parents, my brothers, their families, and all the friends who feel like family. Special shout out to my wife's family. They support me by supporting my wife every day. What I'm saying is this book has a lot of authors, even though I'm the one (unfortunately) holding the pen.</p>
+      <p>I've been thinking about this story for twenty years. It changed, evolved, and refused to let me go. I've taken many cracks at putting it on paper over that time, just for my sanity, but none of them made it past Act 1.</p>
+      <p>Christmas 2024, I took a long drive halfway across the US and back again. I had a lot of time to talk to our dog, Lincoln. He was my co-pilot (and now our logo), and he helped me rearrange the beats that cracked the story wide open. What I'm saying is that dogs are the best.</p>
+      <p>Last but not least, thank you for your support of my work. I wrote this so that it could be read. I know it's not perfect, but I hope you find something to love about it, just as I did.</p>
+      <p class="sign">Citius. Altior. Longius. Maior.</p>
+      <p class="sign-name">&mdash;A.C. Bishkey</p>
+      <div class="about-cta">
+        <a class="btn btn-primary" href="https://acbishkey.substack.com/">Substack: Join the Crew</a>
       </div>
     </div>
   </div>
