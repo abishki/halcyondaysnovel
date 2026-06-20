@@ -103,19 +103,20 @@ img{max-width:100%;display:block;}
 .midcta-line{font-family:var(--display);font-size:clamp(1.4rem,3vw,1.9rem);color:var(--parchment);margin-bottom:1.4rem;}
 .midcta-line em{font-style:italic;color:var(--brass-bright);}
 .midcta-btns{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;}
-.book--blue{background:linear-gradient(180deg,transparent,rgba(90,140,180,.05));position:relative;overflow:hidden;}
-.book--blue .wrap{position:relative;z-index:1;}
-.book--blue .book-eyebrow,.book--blue .book-title,.book--blue .book-blurb,.book--blue .book-format{text-shadow:0 1px 10px rgba(7,15,28,.75);}
-.book--blue::after{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:var(--clouds) center 30%/cover no-repeat;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,transparent 20%,#000 42%,#000 76%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,transparent 20%,#000 42%,#000 76%,transparent 100%);opacity:.22;z-index:0;pointer-events:none;}
+.book--blue{background:linear-gradient(180deg,transparent,rgba(90,140,180,.05));}
+.zone--blue{position:relative;overflow:hidden;border-bottom:1px solid var(--line);}
+.zone--blue .wrap{position:relative;z-index:1;}
+.zone--blue .book-title,.zone--blue .book-blurb,.zone--blue .book-eyebrow,.zone--blue .book-format,.zone--blue blockquote,.zone--blue figcaption,.zone--blue .praise-head,.zone--blue .midcta-line{text-shadow:0 1px 9px rgba(7,15,28,.7);}
+.zone--blue::after{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:var(--clouds) center/cover no-repeat;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 6%,#000 88%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,#000 6%,#000 88%,transparent 100%);opacity:.22;z-index:0;pointer-events:none;}
 .book--red{background:linear-gradient(180deg,rgba(150,60,55,.06),transparent);}
 .book--red .wrap{position:relative;z-index:1;}
 .book--red .book-blurb{text-shadow:0 1px 10px rgba(7,15,28,.55);}
-.zone--red{position:relative;overflow:hidden;}
+.zone--red{position:relative;overflow:hidden;border-bottom:1px solid var(--line);}
 .zone--red .wrap{position:relative;z-index:1;}
 .zone--red .join h2,.zone--red .join p{text-shadow:0 1px 8px rgba(7,15,28,.55);}
 .zone--red::after{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:var(--clouds-red) center/cover no-repeat;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 15%,#000 85%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,#000 15%,#000 85%,transparent 100%);opacity:.45;z-index:0;pointer-events:none;}
 
-.praise{padding:5rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#091320;}
+.praise{padding:5rem 0;}
 .praise-head{text-align:center;font-size:.76rem;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);margin-bottom:3rem;}
 .praise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4rem;}
 .praise blockquote{font-family:var(--display);font-style:italic;font-size:1.18rem;line-height:1.45;color:var(--parchment);}
@@ -161,6 +162,8 @@ img{max-width:100%;display:block;}
 .book--gold::after{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:var(--stars) center/cover no-repeat;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,transparent 18%,#000 42%,#000 76%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,transparent 18%,#000 42%,#000 76%,transparent 100%);opacity:.5;z-index:0;pointer-events:none;}
 .book--gold .book-grid{grid-template-columns:300px minmax(0,560px);}
 .book--gold .book-eyebrow{color:var(--brass);}
+.book--gold .spoiler summary{color:var(--brass-bright);border-color:rgba(200,160,99,.42);text-shadow:0 1px 8px rgba(7,15,28,.6);}
+.book--gold .spoiler summary:hover{color:var(--parchment);border-color:var(--brass);background:rgba(200,160,99,.12);}
 </style>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -198,6 +201,7 @@ img{max-width:100%;display:block;}
   </div>
 </header>
 
+<section class="zone zone--blue">
 <section class="section book book--blue">
   <div class="wrap">
     <div class="book-grid">
@@ -236,6 +240,8 @@ img{max-width:100%;display:block;}
     </div>
   </div>
 </section>
+</section>
+
 
 <section class="zone zone--red">
 <section class="section book book--red">
@@ -273,11 +279,14 @@ img{max-width:100%;display:block;}
 <section class="section book book--gold">
   <div class="wrap">
     <div class="book-grid">
-      <img class="book-cover" src="cover-a-world-without.jpg" alt="Halcyon Days: A World Without cover, blurred teaser">
+      <img class="book-cover" src="cover-a-world-without.jpg" alt="Halcyon Days Book Three cover, blurred teaser">
       <div>
         <p class="book-eyebrow">Book Three &middot; Coming in 2027</p>
-        <h2 class="book-title">A World Without</h2>
-        <p class="book-blurb">The epic conclusion to the Halcyon Days trilogy.</p>
+        <h2 class="book-title">The Epic Conclusion</h2>
+        <details class="spoiler">
+          <summary>Spoilers: Click to Reveal</summary>
+          <p class="book-blurb">Wars don't end when the fighting stops. They end when the people who survived them decide what they're willing to become. For the crew of the Halcyon Days, that decision is coming whether they're ready or not.</p>
+        </details>
       </div>
     </div>
   </div>
