@@ -129,7 +129,7 @@ img{max-width:100%;display:block;}
 .footer-fine{margin-top:2rem;font-size:.76rem;color:var(--muted);opacity:.8;}
 
 @media(max-width:760px){
- .book--blue .book-grid,.book--red .book-grid{grid-template-columns:1fr;gap:2rem;text-align:center;}
+ .book--blue .book-grid,.book--red .book-grid,.book--gold .book-grid{grid-template-columns:1fr;gap:2rem;text-align:center;}
  .book-cover{max-width:230px;width:100%;margin:0 auto;}
  .book--red .book-grid > div{order:2;} .book--red .book-grid > img{order:1;}
  .book-ctas{justify-content:center;}
@@ -148,6 +148,9 @@ img{max-width:100%;display:block;}
 }
 @media(prefers-reduced-motion:reduce){.hero-clouds{animation:none;}.spoiler .book-blurb{animation:none;}html{scroll-behavior:auto;}}
 :focus-visible{outline:2px solid var(--brass-bright);outline-offset:3px;border-radius:2px;}
+.book--gold{background:linear-gradient(180deg,transparent,rgba(200,160,99,.05));}
+.book--gold .book-grid{grid-template-columns:300px minmax(0,560px);}
+.book--gold .book-eyebrow{color:var(--brass);}
 </style>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -241,6 +244,19 @@ img{max-width:100%;display:block;}
         </div>
       </div>
       <img class="book-cover" src="cover-city-in-the-sands.jpg" alt="Halcyon Days: The City in the Sands cover">
+    </div>
+  </div>
+</section>
+
+<section class="section book book--gold">
+  <div class="wrap">
+    <div class="book-grid">
+      <img class="book-cover" src="cover-a-world-without.jpg" alt="Halcyon Days: A World Without cover, blurred teaser">
+      <div>
+        <p class="book-eyebrow">Book Three &middot; Coming in 2027</p>
+        <h2 class="book-title">A World Without</h2>
+        <p class="book-blurb">The epic conclusion to the Halcyon Days trilogy.</p>
+      </div>
     </div>
   </div>
 </section>
