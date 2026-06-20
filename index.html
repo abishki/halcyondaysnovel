@@ -103,11 +103,17 @@ img{max-width:100%;display:block;}
 .midcta-line{font-family:var(--display);font-size:clamp(1.4rem,3vw,1.9rem);color:var(--parchment);margin-bottom:1.4rem;}
 .midcta-line em{font-style:italic;color:var(--brass-bright);}
 .midcta-btns{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;}
-.book--blue{background:linear-gradient(180deg,transparent,rgba(90,140,180,.05));}
-.book--red{background:linear-gradient(180deg,rgba(150,60,55,.06),transparent);position:relative;overflow:hidden;padding-bottom:12rem;}
+.book--blue{background:linear-gradient(180deg,transparent,rgba(90,140,180,.05));position:relative;overflow:hidden;}
+.book--blue .wrap{position:relative;z-index:1;}
+.book--blue .book-eyebrow,.book--blue .book-title,.book--blue .book-blurb,.book--blue .book-format{text-shadow:0 1px 10px rgba(7,15,28,.75);}
+.book--blue::after{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:var(--clouds) center 30%/cover no-repeat;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,transparent 20%,#000 42%,#000 76%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,transparent 20%,#000 42%,#000 76%,transparent 100%);opacity:.22;z-index:0;pointer-events:none;}
+.book--red{background:linear-gradient(180deg,rgba(150,60,55,.06),transparent);}
 .book--red .wrap{position:relative;z-index:1;}
 .book--red .book-blurb{text-shadow:0 1px 10px rgba(7,15,28,.55);}
-.book--red::after{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:var(--clouds-red) center 28%/cover no-repeat;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,transparent 24%,#000 46%,#000 72%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,transparent 24%,#000 46%,#000 72%,transparent 100%);opacity:.55;z-index:0;pointer-events:none;}
+.zone--red{position:relative;overflow:hidden;}
+.zone--red .wrap{position:relative;z-index:1;}
+.zone--red .join h2,.zone--red .join p{text-shadow:0 1px 8px rgba(7,15,28,.55);}
+.zone--red::after{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:var(--clouds-red) center/cover no-repeat;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 15%,#000 85%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,#000 15%,#000 85%,transparent 100%);opacity:.45;z-index:0;pointer-events:none;}
 
 .praise{padding:5rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#091320;}
 .praise-head{text-align:center;font-size:.76rem;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);margin-bottom:3rem;}
@@ -231,6 +237,7 @@ img{max-width:100%;display:block;}
   </div>
 </section>
 
+<section class="zone zone--red">
 <section class="section book book--red">
   <div class="wrap">
     <div class="book-grid">
@@ -260,6 +267,8 @@ img{max-width:100%;display:block;}
     <p class="fine">Advance copies go out through NetGalley and BookSirens.</p>
   </div>
 </section>
+</section>
+
 
 <section class="section book book--gold">
   <div class="wrap">
