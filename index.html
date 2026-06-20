@@ -37,6 +37,7 @@
  --display:'Bodoni Moda',serif; --body:'Spectral',serif;
  --clouds-red:url('clouds-red.webp');
  --clouds:url('clouds.webp');
+  --stars:url('starfield.webp');
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
@@ -148,7 +149,10 @@ img{max-width:100%;display:block;}
 }
 @media(prefers-reduced-motion:reduce){.hero-clouds{animation:none;}.spoiler .book-blurb{animation:none;}html{scroll-behavior:auto;}}
 :focus-visible{outline:2px solid var(--brass-bright);outline-offset:3px;border-radius:2px;}
-.book--gold{background:linear-gradient(180deg,transparent,rgba(200,160,99,.05));}
+.book--gold{background:linear-gradient(180deg,transparent,rgba(200,160,99,.05));position:relative;overflow:hidden;padding-bottom:12rem;}
+.book--gold .wrap{position:relative;z-index:1;}
+.book--gold .book-eyebrow,.book--gold .book-title,.book--gold .book-blurb{text-shadow:0 1px 12px rgba(7,15,28,.6);}
+.book--gold::after{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:var(--stars) center/cover no-repeat;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,transparent 18%,#000 42%,#000 76%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,transparent 18%,#000 42%,#000 76%,transparent 100%);opacity:.5;z-index:0;pointer-events:none;}
 .book--gold .book-grid{grid-template-columns:300px minmax(0,560px);}
 .book--gold .book-eyebrow{color:var(--brass);}
 </style>
@@ -248,6 +252,15 @@ img{max-width:100%;display:block;}
   </div>
 </section>
 
+<section class="join" id="join">
+  <div class="wrap">
+    <h2>Request an advance copy.</h2>
+    <p>Get on the reader list for advance copies of The City in the Sands and get word the day it goes on sale. Free, and easy to leave whenever you like.</p>
+    <a class="btn btn-primary" href="./contact.html">Request a Free Advance Copy</a>
+    <p class="fine">Advance copies go out through NetGalley and BookSirens.</p>
+  </div>
+</section>
+
 <section class="section book book--gold">
   <div class="wrap">
     <div class="book-grid">
@@ -258,15 +271,6 @@ img{max-width:100%;display:block;}
         <p class="book-blurb">The epic conclusion to the Halcyon Days trilogy.</p>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="join" id="join">
-  <div class="wrap">
-    <h2>Request an advance copy.</h2>
-    <p>Get on the reader list for advance copies of The City in the Sands and get word the day it goes on sale. Free, and easy to leave whenever you like.</p>
-    <a class="btn btn-primary" href="./contact.html">Request a Free Advance Copy</a>
-    <p class="fine">Advance copies go out through NetGalley and BookSirens.</p>
   </div>
 </section>
 
