@@ -216,7 +216,7 @@ img{max-width:100%;display:block;}
 <section class="section book book--blue">
   <div class="wrap">
     <div class="book-grid">
-      <img class="book-cover cover-zoom" src="cover-colossus.jpg" alt="Halcyon Days: The Colossus cover">
+      <img class="book-cover cover-zoom" src="cover-colossus.jpg" data-large="cover-colossus-large.jpg" alt="Halcyon Days: The Colossus cover">
       <div>
         <p class="book-eyebrow">Book One &middot; Available now</p>
         <h2 class="book-title">The Colossus</h2>
@@ -275,7 +275,7 @@ img{max-width:100%;display:block;}
           <a class="btn btn-primary" href="./contact.html">Request a Free Advance Copy</a>
         </div>
       </div>
-      <img class="book-cover cover-zoom" src="cover-city-in-the-sands.jpg" alt="Halcyon Days: The City in the Sands cover">
+      <img class="book-cover cover-zoom" src="cover-city-in-the-sands.jpg" data-large="cover-city-in-the-sands-large.jpg" alt="Halcyon Days: The City in the Sands cover">
     </div>
   </div>
 </section>
@@ -344,8 +344,8 @@ img{max-width:100%;display:block;}
   function closeLb(){lb.classList.remove('open');lb.setAttribute('aria-hidden','true');document.body.style.overflow='';}
   document.querySelectorAll('.cover-zoom').forEach(function(c){
     c.setAttribute('tabindex','0');c.setAttribute('role','button');
-    c.addEventListener('click',function(){openLb(c.src,c.alt);});
-    c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openLb(c.src,c.alt);}});
+    c.addEventListener('click',function(){openLb(c.dataset.large||c.src,c.alt);});
+    c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openLb(c.dataset.large||c.src,c.alt);}});
   });
   lb.addEventListener('click',function(e){if(e.target===lb)closeLb();});
   btn.addEventListener('click',closeLb);
