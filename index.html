@@ -61,6 +61,7 @@ img{max-width:100%;display:block;}
 .hamburger span{display:block;width:24px;height:2px;background:var(--parchment);border-radius:1px;transition:.25s;}
 
 .hero{position:relative;min-height:94vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:linear-gradient(180deg,#060D18 0%,#0B1626 44%,#16293F 100%);}
+.hero-stars{position:absolute;left:0;right:0;top:0;height:70%;background:var(--stars) top center/cover no-repeat;-webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 36%,transparent 100%);mask-image:linear-gradient(to bottom,#000 0%,#000 36%,transparent 100%);opacity:.5;pointer-events:none;}
 .hero-clouds{position:absolute;left:0;right:0;bottom:0;height:56%;background:var(--clouds) bottom center/cover no-repeat;-webkit-mask-image:linear-gradient(to top,#000 50%,transparent 100%);mask-image:linear-gradient(to top,#000 50%,transparent 100%);opacity:.9;pointer-events:none;animation:drift 70s ease-in-out infinite alternate;}
 .hero-glow{position:absolute;left:50%;bottom:-6%;width:130%;height:56%;transform:translateX(-50%);background:radial-gradient(ellipse at center bottom,rgba(200,160,99,.24),transparent 62%);pointer-events:none;}
 @keyframes drift{from{background-position:47% bottom;}to{background-position:53% bottom;}}
@@ -187,6 +188,7 @@ img{max-width:100%;display:block;}
 
 <header class="hero">
   <div class="hero-glow"></div>
+  <div class="hero-stars"></div>
   <div class="hero-clouds"></div>
   <div class="hero-inner">
     <p class="eyebrow">A science-fantasy trilogy</p>
