@@ -162,7 +162,7 @@ img{max-width:100%;display:block;}
 .book--gold .wrap{position:relative;z-index:1;}
 .book--gold .book-eyebrow,.book--gold .book-title,.book--gold .book-blurb{text-shadow:0 1px 12px rgba(7,15,28,.6);}
 .book--gold::after{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:var(--stars) center/cover no-repeat;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,transparent 18%,#000 42%,#000 76%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,transparent 18%,#000 42%,#000 76%,transparent 100%);opacity:.5;z-index:0;pointer-events:none;}
-.book--gold .book-grid{grid-template-columns:300px minmax(0,560px);}
+@media(min-width:761px){.book--gold .book-grid{grid-template-columns:300px minmax(0,560px);}}
 .book--gold .book-eyebrow{color:var(--brass);}
 .book--gold .spoiler summary{color:var(--brass-bright);border-color:rgba(200,160,99,.42);text-shadow:0 1px 8px rgba(7,15,28,.6);}
 .book--gold .spoiler summary:hover{color:var(--parchment);border-color:var(--brass);background:rgba(200,160,99,.12);}
